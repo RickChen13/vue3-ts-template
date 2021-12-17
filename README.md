@@ -5,26 +5,31 @@
 ### 安装与运行
 
 #### 安装依赖
-```
+
+```bash
 yarn
 ```
 
 #### 运行
-```
+
+```bash
 yarn serve
 ```
 
 #### 编译
-```
+
+```bash
 yarn build
 ```
 
 #### 整理和修复文件
-```
+
+```bash
 yarn lint
 ```
 
 ### 说明
+
 本项目志在快速搭建一个`vue3`+`typescript`的拥有基础组件的框架  
 目前已经集成有：
 
@@ -63,6 +68,3 @@ yarn lint
     ├─App.vue               主页面
     └─main.ts               主进程入口文件
 ```
-
-
-
