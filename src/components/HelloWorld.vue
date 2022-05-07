@@ -5,12 +5,12 @@
 </template>
 
 <script lang="ts">
-import Components from "@/bll/components/HelloWorld";
+import Components from "@/components/script/HelloWorld";
 const components = new Components();
 export default components.vue();
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-@import "@/style/components/HlloWorld.scss";
+@import "@/components/style/HlloWorld.scss";
 </style>

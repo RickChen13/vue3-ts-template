@@ -36,35 +36,3 @@ yarn lint
 * `sass`和`scss`
 * `element-plus`
 * `axios`请求服务
-
-#### 目录结构
-
-```tree
-.
-└─src
-    ├─assets                图片资源
-    ├─base                  基类
-    ├─bll                   业务逻辑层    
-    |    ├─components       组件业务逻辑层
-    |    ├─controller       控制器业务逻辑层
-    |    └─view             视图业务逻辑层
-    ├─common                js内部函数功能重写
-    ├─components            组件
-    ├─config                配置信息
-    ├─controller            控制器
-    ├─extend                外部包、函数功能重写
-    ├─helper                工具助手
-    ├─interface             自定义结构体
-    |    ├─base             基类结构体
-    |    ├─bll              业务逻辑结构体
-    |    └─controller       控制器结构体
-    ├─library               应用库、类
-    ├─router                路由
-    |    └─node             根据节点存放路由信息
-    ├─style                 样式存放
-    |    ├─components       组件样式
-    |    └─view             视图样式
-    ├─view                  节点页面
-    ├─App.vue               主页面
-    └─main.ts               主进程入口文件
-```

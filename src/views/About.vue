@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts">
-import Component from "@/bll/views/About";
+import Component from "@/views/script/About";
 const components = new Component();
 export default components.vue();
 </script>

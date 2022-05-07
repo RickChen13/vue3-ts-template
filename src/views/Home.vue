@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-import Component from "@/bll/views/Home";
+import Component from "@/views/script/Home";
 const components = new Component();
 export default components.vue();
 </script>
