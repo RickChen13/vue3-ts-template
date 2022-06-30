@@ -1,7 +1,6 @@
 import BaseViews from "@/fast/base/BaseView";
 import { defineComponent, getCurrentInstance } from "vue";
-import HelloWorld from "@/components/HelloWorld.vue";
-import Nav from "@/components/Nav.vue";
+import Nav from "@/app/components/Nav/Nav.vue";
 
 class Component extends BaseViews {
   constructor() {
@@ -10,7 +9,7 @@ class Component extends BaseViews {
 
   public vue() {
     const vue = defineComponent({
-      name: "Home",
+      name: "About",
       setup() {
         const proxy = getCurrentInstance();
         return {
@@ -20,7 +19,6 @@ class Component extends BaseViews {
       created() {},
       methods: {},
       components: {
-        HelloWorld,
         Nav,
       },
     });

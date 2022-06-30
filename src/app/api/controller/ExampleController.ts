@@ -1,7 +1,7 @@
 import qs from "qs";
-import BaseController from "@/api/base/BaseController";
-import ExampleBll from "@/api/bll/ExampleBll";
-import { GetArrayList } from "@/api/interface/controller/Example";
+import BaseController from "@/app/api/base/BaseController";
+import ExampleBll from "@/app/api/bll/ExampleBll";
+import { GetArrayList } from "@/app/api/interface/controller/Example";
 
 class ExampleController extends BaseController {
   /**

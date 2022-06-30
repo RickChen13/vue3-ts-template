@@ -5,7 +5,7 @@ import {
   callBlackConfig,
   Result,
   ErrResult,
-} from "@/api/interface/base/RequestC";
+} from "@/app/api/interface/base/RequestC";
 
 abstract class BaseRequestC {
   http: HttpAxios;

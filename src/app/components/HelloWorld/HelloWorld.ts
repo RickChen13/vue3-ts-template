@@ -1,5 +1,5 @@
 import BaseComponent from "@/fast/base/BaseComponent";
-import { defineComponent, getCurrentInstance } from "vue";
+import { defineComponent, getCurrentInstance, inject } from "vue";
 
 class Component extends BaseComponent {
   constructor() {
@@ -9,13 +9,20 @@ class Component extends BaseComponent {
   public vue() {
     const vue = defineComponent({
       name: "Index",
+
       setup() {
-        const proxy = getCurrentInstance();
+        let params: any = inject("params");
+        const proxy: any = getCurrentInstance();
+        if (params.value.name == "rick") {
+          console.log("params.name", params.value.name);
+          params.name = "ricky";
+        }
         return {
           proxy,
+          params,
         };
       },
-      created() {},
+
       methods: {},
       components: {},
       props: {
