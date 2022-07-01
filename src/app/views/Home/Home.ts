@@ -1,7 +1,8 @@
 import BaseViews from "@/fast/base/BaseView";
 import { defineComponent, getCurrentInstance, computed } from "vue";
-import HelloWorld from "@/app/components/HelloWorld/HelloWorld.vue";
 import Nav from "@/app/components/Nav/Nav.vue";
+import HelloWorld from "@/app/components/HelloWorld/HelloWorld.vue";
+import EventBus from "@/app/components/EVentBus/EVentBus.vue";
 
 class Component extends BaseViews {
   constructor() {
@@ -31,6 +32,7 @@ class Component extends BaseViews {
       components: {
         HelloWorld,
         Nav,
+        EventBus,
       },
       provide() {
         return {
