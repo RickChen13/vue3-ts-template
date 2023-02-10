@@ -1,0 +1,23 @@
+
+import BaseViews from "@/fast/base/BaseView";
+import { defineComponent, getCurrentInstance } from "vue";
+
+class Component extends BaseViews {
+    constructor() {
+    super();
+    }
+
+    public vue() {
+    const vue = defineComponent({
+        setup() {
+        return {};
+        },
+        created() {},
+        methods: {},
+        components: {},
+    });
+    return vue;
+    }
+}
+
+export default Component;

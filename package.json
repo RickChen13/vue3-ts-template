@@ -1,11 +1,14 @@
 {
   "name": "vue3-ts-template",
-  "version": "2.0.0",
-  "private": true,
+  "version": "3.0.0",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "helper": "node src/fast/helper/dist",
+    "helper:i": "cd src/fast/helper && yarn",
+    "helper:dev": "cd src/fast/helper && yarn helper",
+    "helper:build": "cd src/fast/helper && yarn build"
   },
   "dependencies": {
     "@vue/cli": "^5.0.8",

@@ -1,15 +1,13 @@
 <template>
-  <div>
-    {{ str }}
-  </div>
+  <div>vue3-ts-template</div>
 </template>
 
 <script lang="ts">
-import Component from "./b";
+import Component from "@/app/views/index/Index";
 const components = new Component();
 export default components.vue();
 </script>
 
 <style lang="scss" scoped>
-@import "./b.scss";
+@import "@/app/views/index/Index.scss";
 </style>
