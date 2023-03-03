@@ -1,17 +1,17 @@
 import qs from "qs";
-import BaseController from "@/app/api/base/BaseController";
-import ExampleBll from "@/app/api/bll/ExampleBll";
-import { GetArrayList } from "@/app/api/interface/controller/Example";
+import BaseController from "@/fast/api/BaseController";
+import CommonBll from "@/app/api/bll/CommonBll";
+import { ExampleInterface } from "@/app/api/controller/ExampleInterface";
 
 class ExampleController extends BaseController {
   /**
    * 逻辑处理层
    */
-  bll: ExampleBll;
+  bll: CommonBll;
 
   constructor() {
     super();
-    this.bll = new ExampleBll();
+    this.bll = new CommonBll();
   }
 
   /**
@@ -19,7 +19,7 @@ class ExampleController extends BaseController {
    *
    * @param config
    */
-  async getArrayList(config: GetArrayList) {
+  async getArrayList(config: ExampleInterface) {
     const url = "/api/test/getArrayList";
     const reqConfig = {
       url: this.bll.reqUrl(url),

@@ -1,13 +1,14 @@
-import HttpAxios from "@/fast/axios";
+import HttpAxios from "@/fast/api/Axios";
 import {
   axiosReqConfig,
   chainConfig,
   callBlackConfig,
   Result,
   ErrResult,
-} from "@/app/api/interface/base/RequestC";
+} from "@/fast/api/BaseControllerInterface";
+import { requestConfig } from "@/fast/api/AxiosInterface";
 
-abstract class BaseRequestC {
+abstract class BaseController {
   http: HttpAxios;
 
   /**
@@ -24,20 +25,12 @@ abstract class BaseRequestC {
    * @returns
    */
   async request(config: axiosReqConfig) {
-    const reqConfig = {
-      url: config.url,
-      data: config.data,
-      method: this.checkMethond(config.method),
-      middleware: false,
-      success: config.success,
-      error: config.error,
-    };
     if (config.chain == true) {
       return new Promise((resolve) => {
-        resolve(this.chain(reqConfig));
+        resolve(this.chain(config));
       });
     } else {
-      this.callBlack(reqConfig);
+      this.callBlack(config);
     }
   }
 
@@ -47,7 +40,7 @@ abstract class BaseRequestC {
    * @param config
    */
   protected async callBlack(config: callBlackConfig) {
-    this.http.request({
+    let reqConfig: requestConfig = {
       url: config.url,
       data: config.data,
       method: config.method,
@@ -65,7 +58,14 @@ abstract class BaseRequestC {
           config.error(error);
         }
       },
-    });
+    };
+    if (config.headers != undefined) {
+      reqConfig.headers = config.headers;
+    }
+    if (config.timeout != undefined) {
+      reqConfig.timeout = config.timeout;
+    }
+    this.http.request(reqConfig);
   }
 
   /**
@@ -75,8 +75,7 @@ abstract class BaseRequestC {
    * @returns
    */
   protected async chain(config: chainConfig) {
-    let { callBackRes }: any = {};
-    callBackRes = await this.http.request({
+    let reqConfig: requestConfig = {
       url: config.url,
       data: config.data,
       method: config.method,
@@ -91,7 +90,14 @@ abstract class BaseRequestC {
         const err = this.error(error);
         return err;
       },
-    });
+    };
+    if (config.headers != undefined) {
+      reqConfig.headers = config.headers;
+    }
+    if (config.timeout != undefined) {
+      reqConfig.timeout = config.timeout;
+    }
+    let callBackRes: any = await this.http.request(reqConfig);
     return new Promise((resolve) => {
       resolve(callBackRes);
     });
@@ -143,7 +149,7 @@ abstract class BaseRequestC {
           result: false,
           msg: "未登录",
           needRouter: true,
-          router: "/",
+          router: "/view/login",
           needMsg: true,
         };
         break;
@@ -172,4 +178,4 @@ abstract class BaseRequestC {
   }
 }
 
-export default BaseRequestC;
+export default BaseController;
