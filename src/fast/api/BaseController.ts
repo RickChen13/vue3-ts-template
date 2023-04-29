@@ -1,12 +1,12 @@
-import HttpAxios from "@/fast/api/Axios";
+import HttpAxios from "./Axios";
+import { requestConfig } from "./AxiosInterface";
 import {
   axiosReqConfig,
   chainConfig,
   callBlackConfig,
   Result,
   ErrResult,
-} from "@/fast/api/BaseControllerInterface";
-import { requestConfig } from "@/fast/api/AxiosInterface";
+} from "./BaseControllerInterface";
 
 abstract class BaseController {
   http: HttpAxios;
@@ -42,7 +42,9 @@ abstract class BaseController {
   protected async callBlack(config: callBlackConfig) {
     let reqConfig: requestConfig = {
       url: config.url,
+      headers: config.headers,
       data: config.data,
+      timeout: config.timeout,
       method: config.method,
       success: (result: any) => {
         if (config.middleware != false) {
@@ -77,8 +79,10 @@ abstract class BaseController {
   protected async chain(config: chainConfig) {
     let reqConfig: requestConfig = {
       url: config.url,
+      headers: config.headers,
       data: config.data,
       method: config.method,
+      timeout: config.timeout,
       chain: true,
       success: (result: any) => {
         if (config.middleware != false) {
@@ -91,12 +95,6 @@ abstract class BaseController {
         return err;
       },
     };
-    if (config.headers != undefined) {
-      reqConfig.headers = config.headers;
-    }
-    if (config.timeout != undefined) {
-      reqConfig.timeout = config.timeout;
-    }
     let callBackRes: any = await this.http.request(reqConfig);
     return new Promise((resolve) => {
       resolve(callBackRes);
