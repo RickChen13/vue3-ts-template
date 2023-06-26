@@ -1,23 +1,31 @@
-
 import BaseViews from "@/fast/base/BaseView";
-import { defineComponent, getCurrentInstance } from "vue";
+import { defineComponent } from "vue";
+import ApiController from "@/app/api/controller/ApiController";
 
 class Component extends BaseViews {
-    constructor() {
+  constructor() {
     super();
-    }
+  }
 
-    public vue() {
+  public vue() {
     const vue = defineComponent({
-        setup() {
+      setup() {
+        const api = new ApiController();
+        (async () => {
+          let res = await api.onerow({
+            data: {},
+            method: "get",
+          });
+          console.log("res", res);
+        })();
         return {};
-        },
-        created() {},
-        methods: {},
-        components: {},
+      },
+      created() {},
+      methods: {},
+      components: {},
     });
     return vue;
-    }
+  }
 }
 
 export default Component;
