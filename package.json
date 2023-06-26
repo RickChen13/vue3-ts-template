@@ -11,10 +11,13 @@
     "helper:build": "cd src/fast/helper && yarn build"
   },
   "dependencies": {
+    "@types/js-cookie": "^3.0.3",
     "@vue/cli": "^5.0.8",
+    "await-to-js": "^3.0.0",
     "axios": "^0.24.0",
     "core-js": "^3.6.5",
     "element-plus": "^2.2.29",
+    "js-cookie": "^3.0.5",
     "mitt": "^3.0.0",
     "qs": "^6.10.1",
     "vue": "^3.2.33",
