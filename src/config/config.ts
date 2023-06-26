@@ -1,4 +1,4 @@
 export default {
-  hostUrl: "https://test.azzc.xyz",
+  hostUrl: "https://api.azzc.xyz",
   tokenName: "vue3Project",
 };
