@@ -5,6 +5,14 @@
  * @see https://cli.vuejs.org/zh/config/index.html#vue-config-js
  */
 module.exports = {
-  // publicPath: process.env.NODE_ENV === "production" ?
-  //   "./" : "./",
-};
+  configureWebpack: {
+    module: {
+      rules: [
+        {
+          test: /\.mjs$/,
+          loader: 'babel-loader'
+        }
+      ]
+    }
+  }
+}

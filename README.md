@@ -7,31 +7,31 @@
 ### 安装依赖
 
 ```bash
-yarn
+npm i
 ```
 
 ### 运行
 
 ```bash
-yarn serve
+npm run serve
 ```
 
 ### 编译
 
 ```bash
-yarn build
+npm run build
 ```
 
 ### 整理和修复文件
 
 ```bash
-yarn lint
+npm run lint
 ```
 
 ### 助手
 
 ```bash
-yarn helper -h
+npm run helper -h
 ```
 
 #### 开发模式
@@ -39,17 +39,17 @@ yarn helper -h
 ##### 依赖安装
 
 ```bash
-yarn helper:i
+npm run helper:i
 ```
 
 ##### 调试
 
 ```bash
-yarn helper:dev
+npm run helper:dev
 ```
 
 ##### 助手编译
 
 ```bash
-yarn helper:build
+npm run helper:build
 ```

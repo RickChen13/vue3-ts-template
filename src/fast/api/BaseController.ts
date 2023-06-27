@@ -34,7 +34,7 @@ abstract class BaseController {
     if (err != null) {
       result = this.error(err);
     } else {
-      result = res?.data;
+      result = res?res.data:res;
     }
     return new Promise((resolve) => {
       resolve(result);

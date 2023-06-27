@@ -1,6 +1,6 @@
 {
   "name": "vue3-ts-template",
-  "version": "3.0.1",
+  "version": "3.2.33",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -16,13 +16,14 @@
     "await-to-js": "^3.0.0",
     "axios": "^0.24.0",
     "core-js": "^3.6.5",
-    "element-plus": "^2.2.29",
+    "element-plus": "^2.3.7",
     "js-cookie": "^3.0.5",
     "mitt": "^3.0.0",
     "qs": "^6.10.1",
     "vue": "^3.2.33",
     "vue-class-component": "^8.0.0-0",
     "vue-router": "^4.0.0-0",
+    "vue-starport": "^0.3.0",
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {
