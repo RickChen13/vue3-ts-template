@@ -1,6 +1,6 @@
-import to from "await-to-js";
-import { requestConfig, requestError } from "./BaseControllerInterface";
-import axios, { AxiosRequestConfig, AxiosStatic } from "axios";
+import to from 'await-to-js'
+import { type requestConfig, type requestError } from './BaseControllerInterface'
+import axios, { type AxiosRequestConfig, type AxiosStatic } from 'axios'
 
 abstract class BaseController {
   /**
@@ -10,35 +10,35 @@ abstract class BaseController {
    * @returns
    */
   protected async request(config: requestConfig): Promise<any> {
-    config = this.axiosCheckConfig(config);
-    let axiosRequestConfig: AxiosRequestConfig<any>;
-    if (config.method == "post") {
+    config = this.axiosCheckConfig(config)
+    let axiosRequestConfig: AxiosRequestConfig<any>
+    if (config.method == 'post') {
       axiosRequestConfig = {
         url: config.url,
         data: config.data,
         method: config.method,
         timeout: config.timeout,
-        headers: config.headers,
-      };
+        headers: config.headers
+      }
     } else {
       axiosRequestConfig = {
         url: config.url,
         params: config.data,
         method: config.method,
         timeout: config.timeout,
-        headers: config.headers,
-      };
+        headers: config.headers
+      }
     }
-    let [err, res] = await to(axios(axiosRequestConfig));
-    let result: any;
+    const [err, res] = await to(axios(axiosRequestConfig))
+    let result: any
     if (err != null) {
-      result = this.error(err);
+      result = this.error(err)
     } else {
-      result = res?.data;
+      result = res ? res.data : res
     }
     return new Promise((resolve) => {
-      resolve(result);
-    });
+      resolve(result)
+    })
   }
 
   /**
@@ -47,7 +47,7 @@ abstract class BaseController {
    * @returns
    */
   protected getAxios(): AxiosStatic {
-    return axios;
+    return axios
   }
 
   /**
@@ -58,9 +58,9 @@ abstract class BaseController {
   protected error(error: Error): requestError {
     return {
       result: false,
-      msg: "请求失败，请稍后再试",
-      dev: error.message,
-    };
+      msg: '请求失败，请稍后再试',
+      dev: error.message
+    }
   }
 
   /**
@@ -72,14 +72,14 @@ abstract class BaseController {
   private axiosCheckConfig(config: requestConfig) {
     if (config.headers == undefined) {
       config.headers = {
-        "Content-Type": "application/x-www-form-urlencoded charset=UTF-8",
-      };
+        'Content-Type': 'application/x-www-form-urlencoded charset=UTF-8'
+      }
     }
     if (config.timeout == undefined) {
-      config.timeout = 5000;
+      config.timeout = 5000
     }
-    return config;
+    return config
   }
 }
 
-export default BaseController;
+export default BaseController

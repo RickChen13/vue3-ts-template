@@ -1,5 +1,10 @@
+<script setup lang="ts">
+import { StarportCarrier } from "vue-starport";
+</script>
 <template>
-  <router-view></router-view>
+  <StarportCarrier>
+    <router-view></router-view>
+  </StarportCarrier>
 </template>
 
 <style lang="scss">
