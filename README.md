@@ -1,55 +1,46 @@
-# vue3-ts-template
+# fast-vue3
 
-基于`vue3`和`typescript`的整合(架构)
+This template should help get you started developing with Vue 3 in Vite.
 
-## 安装与运行
+## Recommended IDE Setup
 
-### 安装依赖
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-```bash
-yarn
+## Type Support for `.vue` Imports in TS
+
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+
+If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+
+1. Disable the built-in TypeScript Extension
+    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
+    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
+2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+
+## Customize configuration
+
+See [Vite Configuration Reference](https://vitejs.dev/config/).
+
+## Project Setup
+
+```sh
+npm install
 ```
 
-### 运行
+### Compile and Hot-Reload for Development
 
-```bash
-yarn serve
+```sh
+npm run dev
 ```
 
-### 编译
+### Type-Check, Compile and Minify for Production
 
-```bash
-yarn build
+```sh
+npm run build
 ```
 
-### 整理和修复文件
+### Lint with [ESLint](https://eslint.org/)
 
-```bash
-yarn lint
-```
-
-### 助手
-
-```bash
-yarn helper -h
-```
-
-#### 开发模式
-
-##### 依赖安装
-
-```bash
-yarn helper:i
-```
-
-##### 调试
-
-```bash
-yarn helper:dev
-```
-
-##### 助手编译
-
-```bash
-yarn helper:build
+```sh
+npm run lint
 ```

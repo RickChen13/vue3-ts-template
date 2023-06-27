@@ -1,18 +1,18 @@
-import qs from "qs";
-import BaseController from "@/fast/api/BaseController";
-import { requestError } from "@/fast/api/BaseControllerInterface";
-import ApiBll from "@/app/api/bll/ApiBll";
-import { onerowRequest, onerowResult } from "./ApiInterface";
+import qs from 'qs'
+import BaseController from '@/fast/api/BaseController'
+import { type requestError } from '@/fast/api/BaseControllerInterface'
+import ApiBll from '@/app/api/bll/ApiBll'
+import { type onerowRequest, type onerowResult } from './ApiInterface'
 
 class ExampleController extends BaseController {
   /**
    * 逻辑处理层
    */
-  protected bll: ApiBll;
+  protected bll: ApiBll
 
   constructor() {
-    super();
-    this.bll = new ApiBll();
+    super()
+    this.bll = new ApiBll()
   }
 
   /**
@@ -21,16 +21,16 @@ class ExampleController extends BaseController {
    * @param config
    */
   async onerow(config: onerowRequest): Promise<requestError | onerowResult> {
-    const url = "/v1/onerow";
-    let result: requestError | onerowResult = await this.request({
+    const url = '/v1/onerow'
+    const result: requestError | onerowResult = await this.request({
       url: this.bll.reqUrl(url),
       data: qs.stringify(config.data),
-      method: config.method,
-    });
+      method: config.method
+    })
     return new Promise((resolve) => {
-      resolve(result);
-    });
+      resolve(result)
+    })
   }
 }
 
-export default ExampleController;
+export default ExampleController
