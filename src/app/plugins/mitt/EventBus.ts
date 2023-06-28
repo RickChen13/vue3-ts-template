@@ -1,3 +1,7 @@
-import mitt from "mitt";
+import mitt from 'mitt';
 
-export default mitt();
+type Events = {
+    back: void;
+}
+
+export default mitt<Events>();

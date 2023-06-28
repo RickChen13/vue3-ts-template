@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-text class="mx-1" size="large">StarportTest</el-text>
+    <el-text class="mx-1" size="large">{{ content }}</el-text>
   </div>
   <div>
     <el-button @click="goback()">back</el-button>
@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts">
-import Component from "@/app/views/example/starport/StarportTest";
+import Component from '@/app/views/example/starport/StarportTest';
 const components = new Component();
 export default components.vue();
 </script>

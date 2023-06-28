@@ -7,9 +7,9 @@ class Time {
 	 * @returns 
 	 */
 	static getYear(date: string | number | Date) {
-		const thisDate = new Date(date)
-		const year = thisDate.getFullYear()
-		return year
+		const thisDate = new Date(date);
+		const year = thisDate.getFullYear();
+		return year;
 	}
 
 	/**
@@ -18,14 +18,14 @@ class Time {
 	 * @returns 
 	 */
 	static getYmdHis(date: number) {
-		const thisDate = new Date(date)
-		const Y = thisDate.getFullYear()
-		const m = this.formatZero(thisDate.getMonth() + 1, 2)
-		const d = this.formatZero(thisDate.getDate(), 2)
-		const H = this.formatZero(thisDate.getHours(), 2)
-		const i = this.formatZero(thisDate.getMinutes(), 2)
-		const s = this.formatZero(thisDate.getSeconds(), 2)
-		const YmdHis = `${Y}-${m}-${d} ${H}:${i}:${s}`
+		const thisDate = new Date(date);
+		const Y = thisDate.getFullYear();
+		const m = this.formatZero(thisDate.getMonth() + 1, 2);
+		const d = this.formatZero(thisDate.getDate(), 2);
+		const H = this.formatZero(thisDate.getHours(), 2);
+		const i = this.formatZero(thisDate.getMinutes(), 2);
+		const s = this.formatZero(thisDate.getSeconds(), 2);
+		const YmdHis = `${Y}-${m}-${d} ${H}:${i}:${s}`;
 		return YmdHis;
 	}
 
@@ -37,9 +37,9 @@ class Time {
 	 */
 	static formatZero(num: number, len: number) {
 		if (String(num).length > len) {
-			return num
+			return num;
 		}
-		return (Array(len).join('0') + num).slice(-len)
+		return (Array(len).join('0') + num).slice(-len);
 	}
 
 	/**
@@ -48,14 +48,14 @@ class Time {
 	 * @returns 
 	 */
 	static microtime() {
-		return new Date().getTime()
+		return new Date().getTime();
 	}
 
 	/**
 	 * 获取秒时间戳(10位)
 	 */
 	static time() {
-		return Math.round(Time.microtime() / 1000)
+		return Math.round(Time.microtime() / 1000);
 	}
 
 	/**
@@ -66,11 +66,11 @@ class Time {
 	 * @returns 
 	 */
 	static getDifference(endTime: number, stratTime = Time.microtime()) {
-		let result = 0
+		let result = 0;
 		if (endTime > stratTime) {
-			result = endTime - stratTime
+			result = endTime - stratTime;
 		}
-		return result
+		return result;
 	}
 }
-export default Time
+export default Time;
