@@ -48,9 +48,7 @@ export default class Write {
             fs.accessSync(filename, constants.R_OK | constants.W_OK);
             console.log("文件：" + filename + "已经存在");
             return;
-        } catch (err) {
-            console.log('err', err);
-        }
+        } catch { /* empty */ }
         fs.writeFile(filename, content, (err) => {
             if (err) {
                 return console.log(`文件${filename}写入失败`);

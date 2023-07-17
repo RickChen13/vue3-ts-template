@@ -9,7 +9,11 @@
         "build-only": "vite build",
         "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
         "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-        "format": "prettier --write src/"
+        "format": "prettier --write src/",
+        "helper": "node src/fast/helper/dist",
+        "helper:i": "cd src/fast/helper && yarn",
+        "helper:dev": "cd src/fast/helper && yarn helper",
+        "helper:build": "cd src/fast/helper && yarn build"
     },
     "dependencies": {
         "await-to-js": "^3.0.0",
