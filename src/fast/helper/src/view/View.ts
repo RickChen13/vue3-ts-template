@@ -1,7 +1,7 @@
+import { BASE_PATH } from "../config";
 import path from "path";
-import Write from "./Write";
+import Write from "../common/Write";
 
-const BASE_PATH = path.join(__dirname, "../../../..");
 const BASE_APP_PATH = path.join(BASE_PATH, "/src/app");
 const APP_PATH = "";
 

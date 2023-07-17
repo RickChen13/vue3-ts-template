@@ -31,7 +31,7 @@ npm run lint
 ### 助手
 
 ```bash
-npm run helper -h
+yarn run helper -h
 ```
 
 #### 开发模式
@@ -39,17 +39,17 @@ npm run helper -h
 ##### 依赖安装
 
 ```bash
-npm run helper:i
+yarn run helper:i
 ```
 
 ##### 调试
 
 ```bash
-npm run helper:dev
+yarn run helper:dev
 ```
 
 ##### 助手编译
 
 ```bash
-npm run helper:build
+yarn run helper:build
 ```
