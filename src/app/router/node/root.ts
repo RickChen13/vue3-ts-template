@@ -9,11 +9,6 @@ const root: Array<RouteRecordRaw> = [
             keepAlive: true
         }
     },
-    {
-        path: '/starport',
-        name: 'StarportTest',
-        component: () => import('@/app/views/example/starport/StarportTest.vue')
-    }
 ];
 
 export default root;
