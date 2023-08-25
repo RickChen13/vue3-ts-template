@@ -9,6 +9,7 @@
         "src/**/__tests__/*"
     ],
     "compilerOptions": {
+        "moduleResolution": "Node",
         "composite": true,
         "baseUrl": ".",
         "strict": true,
