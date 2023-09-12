@@ -53,3 +53,9 @@ yarn run helper:dev
 ```bash
 yarn run helper:build
 ```
+
+## 安装通用函数包
+
+```bash
+cd src && git clone -b pure https://github.com/RickChen13/ts-common.git common
+```
