@@ -1,10 +1,5 @@
 <template>
   <el-text class="mx-1" size="large">vue3-ts-template</el-text>
-  <router-link to="/starport">
-    <Starport port="my-id" keep-alive style="height: 600px">
-      <StarportTest />
-    </Starport>
-  </router-link>
 </template>
 
 <script lang="ts">
