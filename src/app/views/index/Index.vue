@@ -1,5 +1,5 @@
 <template>
-  <el-text class="mx-1" size="large">vue3-ts-template</el-text>
+    <el-text class="mx-1" size="large">vue3-ts-template</el-text>
 </template>
 
 <script lang="ts">
