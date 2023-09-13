@@ -1,14 +1,6 @@
 <template>
     <div>
-        <el-text class="mx-1" size="large">{{ note }}</el-text>
-    </div>
-    <div>
-        <router-link to="/starport">
-            <!-- vue-starport不支持KeepAlive -->
-            <Starport port="my-id" keep-alive style="height: 600px">
-                <StarportTest />
-            </Starport>
-        </router-link>
+        <h1>Vue3 + TypeScript + Vite + ElementPlus</h1>
     </div>
 </template>
 
