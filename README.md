@@ -54,8 +54,13 @@ yarn run helper:dev
 yarn run helper:build
 ```
 
-## 安装通用函数包
+## 额外模块
 
 ```bash
-cd src && git clone -b pure https://github.com/RickChen13/ts-common.git common
+# 进入代码文件夹
+cd src
+# 通用函数库
+git clone -b pure https://github.com/RickChen13/ts-common.git common
+# vue助手
+git clone https://github.com/RickChen13/vue-fast.git fast
 ```
