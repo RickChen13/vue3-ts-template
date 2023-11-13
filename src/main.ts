@@ -6,14 +6,14 @@ import router from '@/app/router';
 app.use(router);
 
 import { createPinia } from 'pinia';
-const pinia = createPinia();
-app.use(pinia);
+app.use(createPinia());
 
 import ElementPlus from 'element-plus';
-import zhCn from 'element-plus/lib/locale/lang/zh-cn';
+import zhCn from 'element-plus/es/locale/lang/zh-cn';
 import 'element-plus/dist/index.css';
 app.use(ElementPlus, {
     locale: zhCn
 });
 
 app.mount('#app');
+
