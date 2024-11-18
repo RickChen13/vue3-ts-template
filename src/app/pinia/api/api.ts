@@ -1,4 +1,4 @@
-import ApiController from '@/app/api/controller/ApiController';
+import ApiController from '@/app/api/controller/api.controller';
 import Time from '@/common/Time';
 import { defineStore } from 'pinia';
 

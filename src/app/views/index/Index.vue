@@ -5,11 +5,11 @@
 </template>
 
 <script lang="ts">
-import Component from '@/app/views/index/Index';
+import Component from './Index';
 const components = new Component();
 export default components.vue();
 </script>
 
 <style lang="scss" scoped>
-@import '@/app/views/index/Index.scss';
+@import './Index.scss';
 </style>

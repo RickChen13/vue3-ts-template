@@ -1,4 +1,4 @@
-import BaseViews from '@/fast/base/BaseView';
+import BaseViews from '@/fast/base/base.view';
 import { defineComponent } from 'vue';
 
 class Component extends BaseViews {

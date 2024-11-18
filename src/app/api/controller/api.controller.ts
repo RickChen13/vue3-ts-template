@@ -1,9 +1,9 @@
 import qs from 'qs';
-import BaseController from '@/fast/api/BaseController';
-import ApiBll from '@/app/api/bll/ApiBll';
-import { type onerowRequest, type onerowResult } from './ApiInterface';
+import BaseController from '@/fast/api/base.controller';
+import ApiBll from '@/app/api/bll/api.bll';
+import { type onerowRequest, type onerowResult } from './api.type';
 
-class ExampleController extends BaseController {
+class ApiController extends BaseController {
     /**
      * 逻辑处理层
      */
@@ -32,4 +32,4 @@ class ExampleController extends BaseController {
     }
 }
 
-export default ExampleController;
+export default ApiController;

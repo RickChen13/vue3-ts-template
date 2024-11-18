@@ -5,9 +5,5 @@
 
 
 <style lang="scss">
-@import "@/app/App.scss";
+@import "./App.scss";
 </style>
-
-
-
-

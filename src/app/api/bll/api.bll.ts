@@ -1,4 +1,4 @@
-import BaseBll from "@/fast/api/BaseBll";
+import BaseBll from "@/fast/api/base.bll";
 
 class ApiBll extends BaseBll {
     constructor() {
