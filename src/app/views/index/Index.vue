@@ -11,5 +11,5 @@ export default components.vue();
 </script>
 
 <style lang="scss" scoped>
-@import './Index.scss';
+@use './Index.scss';
 </style>
