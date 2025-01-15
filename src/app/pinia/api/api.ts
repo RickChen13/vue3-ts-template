@@ -1,4 +1,3 @@
-import ApiController from '@/app/api/controller/api.controller';
 import Time from '@/common/Time';
 import { defineStore } from 'pinia';
 
@@ -7,7 +6,7 @@ type OneRowStore = {
     content: string | null;
     oneRowupdateTime: number | null;
 }
-const api = new ApiController();
+
 export const onerowStore = defineStore('oneRow', {
     state: (): OneRowStore => {
         return {
@@ -18,15 +17,7 @@ export const onerowStore = defineStore('oneRow', {
     },
     actions: {
         async getApiOneRow() {
-            const res = await api.onerow({
-                data: {},
-                method: 'get'
-            });
-            if (res.result && res.data) {
-                this.note = res.data.note;
-                this.content = res.data.content;
-                this.oneRowupdateTime = Time.microtime();
-            }
+
         },
         async check() {
             if (this.note != null) {
@@ -39,8 +30,4 @@ export const onerowStore = defineStore('oneRow', {
             }
         },
     }
-
-
-
-
 });
