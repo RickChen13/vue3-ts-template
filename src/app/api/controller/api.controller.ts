@@ -1,7 +1,7 @@
 import qs from 'qs';
 import BaseController from '@/fast/api/base.controller';
 import ApiBll from '@/app/api/bll/api.bll';
-import { type onerowRequest, type onerowResult } from './api.type';
+import type { onerowRequest, onerowResult } from './api.type';
 
 class ApiController extends BaseController {
     /**
